@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { debounceTime, map, Subject, take, takeUntil } from 'rxjs';
-import { selectUsers } from 'src/app/pages/user/store/user.reducer';
+import { searchByEmail, selectUsers } from 'src/app/pages/user/store/user.reducer';
 import * as userActions from '../store/user.actions';
 import { User } from '../store/user.constant';
 import { UserCreateComponent } from '../user-create/user-create.component';
@@ -28,7 +28,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
 
     this.emailControl.valueChanges.pipe(debounceTime(500), takeUntil(this._destroy)).subscribe((val) => {
       if (val) {
-        this.users$ = this.store.pipe(select(selectUsers)).pipe(map((users: User[]) => users.filter((u) => u.email.includes(val))))
+        this.users$ = this.store.pipe(select(searchByEmail({ searchText: val })))
       } else {
         this.users$ = this.store.pipe(select(selectUsers));
       }

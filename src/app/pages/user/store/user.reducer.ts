@@ -36,3 +36,4 @@ export const userReducer = createReducer(
 export const selectUserState = (state: any) => state.userState;
 export const selectUsers = createSelector(selectUserState, (state) => state.users);
 export const selectUserDetails = createSelector(selectUserState, (state) => state.userDeatils);
+export const searchByEmail = (prop:{searchText:string}) => createSelector(selectUserState, (state) => state.users.filter((u:User)=>u.email.includes(prop.searchText)));
