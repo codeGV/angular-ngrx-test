@@ -1,0 +1,32 @@
+
+
+<div class="main">
+    <div class="header">
+        <mat-form-field appearance="fill">
+            <mat-label>Search by email</mat-label>
+            <input placeholder="Search by email" [formControl]="emailControl" matInput>
+        </mat-form-field>
+        <button mat-raised-button (click)="addUser()">Add</button>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="row-item" (click)="onUser(user)" *ngFor="let user of this.users$|async">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.mobile}}</td>
+                </tr>
+            </tbody>
+            
+
+        </table>
+    </div>
+</div>
