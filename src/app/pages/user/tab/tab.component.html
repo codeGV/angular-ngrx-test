@@ -1,4 +1,7 @@
 <div class="tab-component"> 
+    <button mat-mini-fab color="primary" aria-label="back page" (click)="goBack()" >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
     <mat-tab-group>
         <mat-tab label="User Info">
             <app-user-info tabTitle="User Info" [userDeatils]="userDetails$ | async"></app-user-info>

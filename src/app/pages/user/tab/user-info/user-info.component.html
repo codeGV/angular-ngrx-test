@@ -1,4 +1,19 @@
 <h2>{{tabTitle}}</h2>
 <div>
-    <p>{{userDeatils | json}}</p>
+    <!-- <p>{{userDeatils | json}}</p> -->
+    <ul class="user-info">
+        <li>
+            <h4>User id: </h4>{{userDeatils?.id}}
+        </li>
+        <li>
+            <h4>User name: </h4>{{userDeatils?.name}}
+        </li>
+        <li>
+            <h4>User email: </h4>{{userDeatils?.email}}
+        </li>
+        <li>
+            <h4>Mobile no: </h4>{{userDeatils?.mobile}}
+        </li>
+    </ul>
+
 </div>

@@ -10,12 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TabComponent } from './tab/tab.component';
 import { UserHistoryComponent } from './tab/user-history/user-history.component';
 import { UserInfoComponent } from './tab/user-info/user-info.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { UserInfoComponent } from './tab/user-info/user-info.component';
     MatDialogModule,
     MatButtonModule,
     MatTabsModule,
+    MatIconModule,
     StoreModule.forFeature('userState', userReducer),
     EffectsModule.forFeature([UserEffects]),
 
